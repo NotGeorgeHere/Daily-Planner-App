@@ -40,6 +40,7 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: center;
 }
 
 .past {
@@ -63,9 +64,18 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  background-image: url("../images/floppydisk.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  background-size: 75px 75px;
   transition: all 0.3s ease-in-out;
+}
+
+.container {
+  max-width: 90%;
+  margin-bottom: 10px;
 }
