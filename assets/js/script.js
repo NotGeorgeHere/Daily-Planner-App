@@ -1,6 +1,17 @@
 time();
 
 
+
+$('.row').each(function(){
+    var idText = $(this).children('textarea').attr('id');
+    var test = localStorage.getItem(idText);
+    if (test == idText){
+        $(this).children('textarea').val(test);
+    }
+})
+
+
+
 function time(){
     //Gets the overall time for the header and current time for the color-coded timeblocks
     var overallTime = moment().format("dddd, MMMM Do YYYY");
@@ -29,6 +40,12 @@ function time(){
 }
 
 //TODO
-function saveToStorage(){
-
+function saveToStorage(event){
+    var textAreaId = $(this).children('textarea').attr('id');
+    if (event.target.tagName == 'BUTTON'){
+        localStorage.setItem(textAreaId, $(this).children('textarea').val());    
+    }    
 }
+
+var buttonEl = $('.row');
+buttonEl.on('click', saveToStorage);
